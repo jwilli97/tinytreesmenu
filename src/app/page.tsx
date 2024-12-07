@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex h-screen w-full flex-col items-center px-4 py-6 relative">
+    <div className="flex h-screen w-full flex-col items-center px-4 py-6 relative backdrop-blur-lg bg-red-500/30">
       <div className="mt-12">
         <p className="text-center">
           [Open MON - SAT: 12pm - 7pm] <br />
