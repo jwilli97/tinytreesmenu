@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/account13454916/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'qrco.de',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 };

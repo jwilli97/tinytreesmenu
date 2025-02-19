@@ -1,71 +1,39 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from "react";
-import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Intercom from '@intercom/messenger-js-sdk';
 
-export default function Home() {
-  const router = useRouter();
-
-  useEffect(() => {
-    const isAuthenticated = localStorage.getItem('isAuthenticated');
-    
-    if (!isAuthenticated) {
-      router.push('/');
-    }
-  }, [router]);
-
-  async function fetchData() {
-    try {
-
-        // Fetch menu URL
-        // const menuResponse = await fetch('/api/getMenu');
-        // if (!menuResponse.ok) {
-        //     throw new Error(`HTTP error! status: ${menuResponse.status}`);
-        // }
-        // const menuData: { url: string } = await menuResponse.json();
-        // setMenuUrl(menuData.url);
-
-        Intercom({
-          app_id: 'cdcmnvsm',
-        });
-
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+export default function HoustonPage() {
   return (
-    <div className="flex h-screen w-full flex-col items-center px-4 py-6 relative backdrop-blur-lg bg-red-500/30">
-      <div className="mt-12">
-        <p className="text-center">
-          [Open MON - SAT: 12pm - 7pm] <br />
-          Delivery between 7-11pm <br />
-          *6:55pm cutoff for same-day delivery* <br />
-          $75 order minimum <br />
-          CASH ONLY
-        </p>
+    <div className="flex min-h-screen w-full flex-col items-center text-white mt-8">
+      {/* Header Information */}
+      <div className="mb-6 text-center">
+        <p>[Open MON - SAT: 12pm - 7pm]</p>
+        <p>Delivery between 7-11pm</p>
+        <p>*6:55pm cutoff for same-day delivery*</p>
+        <p>$75 order minimum</p>
+        <p>- CASH ONLY -</p>
       </div>
-      <div className="mt-6 mb-6">
-        <Button>Order Here</Button>
+
+      <div>
+      <Button 
+          className="bg-white mb-8 text-[#57c18e] hover:bg-white/90"
+          onClick={() => window.open('https://tinytrees.typeform.com/orderform', '_blank')}
+        >
+          ORDER HERE
+        </Button>
       </div>
-      <div className="mt-3 mb-36 w-full">
-        <div style={{ position: 'relative', width: '100%', height: '300px', paddingTop: '66.67%' }}>
-          <Image
-            src="https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account13454916/50370932_1.png?0.7927771912096631"
-            alt="Current Menu"
-            fill
-            priority
-            style={{ objectFit: 'contain' }}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </div>
+
+      {/* Menu Image */}
+      <div className="relative w-full max-w-3xl">
+        <Image
+          src="https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account13454916/51554728_1.png?0.5599618812725238"
+          alt="Tiny Trees February Menu"
+          width={1000}
+          height={1414}
+          className="rounded-lg shadow-lg mb-12"
+          priority
+        />
       </div>
     </div>
   );
