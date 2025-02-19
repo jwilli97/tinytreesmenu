@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { LogoutButton } from "@/components/LogoutButton";
 
 export default function HoustonPage() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center text-white mt-8">
+      <LogoutButton />
       {/* Header Information */}
       <div className="mb-6 text-center">
         <p>[Open MON - SAT: 12pm - 7pm]</p>
