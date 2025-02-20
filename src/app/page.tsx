@@ -32,15 +32,15 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen w-full items-center justify-center p-4 animate-fade-in">
-      <div className="w-[300px]">
-        <div className="space-y-4 text-center">
+      <div className="w-[300px] text-center">
+        <div className="space-y-4">
           <div className="flex justify-center">
             <Image 
               src="/new_TT_logo.png" 
               width={130} 
               height={130} 
               alt="Welcome Logo"
-              className="animate-fade-in transition-transform duration-300 hover:scale-105" 
+              className="animate-fade-in transition-transform duration-300 hover:scale-105 pl-4" 
             />
           </div>
           <h1 className="text-3xl font-semibold tracking-normal text-white whitespace-nowrap">
@@ -52,7 +52,7 @@ export default function LoginPage() {
           <div className="space-y-2">
             <Label 
               htmlFor="accessCode" 
-              className="text-white text-base"
+              className="text-white text-base block text-left"
             >
               Password:
             </Label>
@@ -63,7 +63,7 @@ export default function LoginPage() {
                 placeholder="********"
                 value={accessCode}
                 onChange={(e) => setAccessCode(e.target.value)}
-                className="text-left text-lg transition-all focus:ring-2 focus:ring-[#007a58] pr-10 pl-3"
+                className="text-center text-lg transition-all focus:ring-2 focus:ring-[#007a58] px-3"
               />
               <button
                 type="button"
