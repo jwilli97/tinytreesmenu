@@ -18,9 +18,8 @@ export default function LoginPage() {
     e.preventDefault();
     
     if (accessCode === process.env.NEXT_PUBLIC_HOUSTON_PASSWORD) {
-      // Set cookie for Houston access
-      document.cookie = `auth_token=houston_authorized; path=/; max-age=18000; secure; samesite=strict`;
-      router.push("/houston");
+      // Redirect to holiday menu QR code
+      window.location.href = "https://qrco.de/holidaymenu";
     } else if (accessCode === process.env.NEXT_PUBLIC_AUSTIN_PASSWORD) {
       // Set cookie for Austin access
       document.cookie = `auth_token=austin_authorized; path=/; max-age=18000; secure; samesite=strict`;
