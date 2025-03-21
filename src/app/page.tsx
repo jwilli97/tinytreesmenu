@@ -18,8 +18,7 @@ export default function LoginPage() {
     e.preventDefault();
     
     if (accessCode === process.env.NEXT_PUBLIC_HOUSTON_PASSWORD || 
-        accessCode === process.env.NEXT_PUBLIC_HOUSTON2_PASSWORD ||
-        accessCode === process.env.NEXT_PUBLIC_HOUSTON3_PASSWORD) {
+        accessCode === process.env.NEXT_PUBLIC_HOUSTON2_PASSWORD) {
       // Redirect to holiday menu QR code
       window.location.href = "https://qrco.de/holidaymenu";
     } else if (accessCode === process.env.NEXT_PUBLIC_AUSTIN_PASSWORD) {
