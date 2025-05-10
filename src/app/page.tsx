@@ -17,10 +17,9 @@ export default function LoginPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (accessCode === process.env.NEXT_PUBLIC_HOUSTON_PASSWORD || 
-        accessCode === process.env.NEXT_PUBLIC_HOUSTON2_PASSWORD) {
+    if (accessCode === process.env.NEXT_PUBLIC_HOUSTON_PASSWORD || accessCode === process.env.NEXT_PUBLIC_HOUSTON_PASSWORD_2 || accessCode === process.env.NEXT_PUBLIC_HOUSTON_PASSWORD_3) {
       // Redirect to holiday menu QR code
-      window.location.href = "https://qrco.de/holidaymenu";
+      window.location.href = "https://qrco.de/tinytreesdailymenu";
     } else if (accessCode === process.env.NEXT_PUBLIC_AUSTIN_PASSWORD) {
       // Set cookie for Austin access
       document.cookie = `auth_token=austin_authorized; path=/; max-age=18000; secure; samesite=strict`;
